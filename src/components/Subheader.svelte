@@ -32,6 +32,30 @@
   .subheader-tools a:hover {
     color: #ccc;
   }
+
+  @media (max-width: 768px) {
+    .subheader {
+      padding: 0.5rem;
+    }
+
+    .current-page {
+      font-size: 1rem;
+    }
+
+    .subheader-tools a {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .current-page {
+      font-size: 0.85rem;
+    }
+
+    .subheader-tools a {
+      font-size: 0.75rem;
+    }
+  }
 </style>
 
 <div class="subheader">

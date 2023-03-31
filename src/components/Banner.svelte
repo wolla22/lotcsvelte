@@ -34,53 +34,39 @@
   });
 </script>
 
-
 <style>
   .banner {
     display: flex;
+    justify-content: center;
     overflow: hidden;
     flex-wrap: wrap;
-    margin: 1%;
+    width: 100%;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    margin: .5em;
   }
 
   .banner-container {
     position: relative;
-    width: 100%;
-    height: 400px;
+    width: 100%; /* Updated to add a 1% margin on each side */
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
     overflow: hidden;
-    margin: 1%;
+
   }
 
   .slide {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 400px;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: opacity 1s;
     display: none;
-  }
 
-  .banner-text {
-    position: absolute;
-    left: 59%;
-    bottom: 2%;
-    text-align: left;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0.8rem;
-    border-radius: 5px;
-    width: 37%;
-  }
-
-  .banner-text h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .banner-text p {
-    font-size: 1rem;
   }
 
   .arrow {
@@ -103,18 +89,12 @@
 </style>
 
 <div class="banner">
-    <div class="banner-container">
-      <div class="slide" style="background-image: url('https://cdn.lordofthecraft.net/monthly_2022_09/BANNER-1.jpg.83bbd0856af5fe2e7532693e7a89a844.jpg');"></div>
-      <div class="slide" style="background-image: url('https://cdn.lordofthecraft.net/monthly_2022_09/BANNER-2.jpg.c82b1ec48aec0e1b0851ccd47427a9c8.jpg');"></div>
-      <div class="slide" style="background-image: url('https://cdn.lordofthecraft.net/monthly_2022_09/BANNER-3.jpg.d46212fb70533be100151e8ac9e28388.jpg');"></div>
-      <div class="banner-text">
-       <h1>Welcome to Lord of the Craft</h1>
-  <p>Join our roleplay server today</p>
+  <div class="banner-container">
+    <div class="slide" style="background-image: url('https://cdn.lordofthecraft.net/monthly_2022_09/BANNER-1.jpg.83bbd0856af5fe2e7532693e7a89a844.jpg');"></div>
+    <div class="slide" style="background-image: url('https://cdn.lordofthecraft.net/monthly_2022_09/BANNER-2.jpg.c82b1ec48aec0e1b0851ccd47427a9c8.jpg');"></div>
+    <div class="slide" style="background-image: url('https://cdn.lordofthecraft.net/monthly_2022_09/BANNER-3.jpg.d46212fb70533be100151e8ac9e28388.jpg');"></div>
+    <span class="arrow left" on:click={previousSlide}>&lt;</span>
+    <span class="arrow right" on:click={nextSlide}>&gt;</span>
+  </div>
 </div>
-<span class="arrow left" on:click={previousSlide}>&lt;</span>
-<span class="arrow right" on:click={nextSlide}>&gt;</span>
-</div>
-</div>
-
-
 

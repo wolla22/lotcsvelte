@@ -8,20 +8,23 @@
 
 <style>
   .sidebar {
-    width: 300px;
+    display: flex;
+    width: 370px;
     font-family: Arial, sans-serif;
     flex-shrink: 1;
-    background-color: #222;
-    padding: 1em;
     float: right;
+    margin: .5em;
+    margin-left: .1em;
+    padding-left: 1em;
   }
 
   .sidebar-section {
-    background-color: #333;
+    background-color: #222;
     border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    width: 250px;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    width: 90%;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
   }
 
   .sidebar-title {
@@ -38,15 +41,51 @@
   .online-users-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.1rem;
   }
 
   .online-user {
     color: #fff;
-    background-color: #444;
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
     font-size: 0.9rem;
+  }
+
+  @media (max-width: 2000px) {
+    .sidebar {
+      width: 350px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .sidebar {
+      width: 250px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+      padding-left: 1.5em;
+      margin-left: 0em;
+    }
+    .sidebar-title {
+      font-size: .9rem;
+    }
+    .sidebar-text {
+      font-size: 0.7rem;
+    }
+    .online-user {
+      font-size: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sidebar {
+      padding-left: 1em;
+      margin-left: 0em;
+      width: 410px;
+      padding-right: 0px;
+      margin-right: 0px;
+    }
   }
 </style>
 
@@ -66,7 +105,7 @@
     <h3 class="sidebar-title">Online Users</h3>
     <div class="online-users-list">
       {#each onlineUsers as user}
-        <div class="online-user">{user}</div>
+        <div class="online-user">{user+", "}</div>
       {/each}
     </div>
   </div>

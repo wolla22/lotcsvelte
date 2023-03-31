@@ -13,6 +13,11 @@
             margin: 0;
             background-color:#333;
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2%;
+        }
         .main {
             display: flex;
             flex-wrap: wrap;
@@ -24,7 +29,6 @@
             display: flex;
             flex-direction: column;
             align-items: left;
-            
         }
         .sidebar {
             align-items: right
@@ -40,16 +44,15 @@
   <Header />
   <Navbar />
   <Subheader />
-
-  <div class="main">
-    <div class="content">
-      <Banner />
-      <Topics />
-    </div>
-    <div class="sidebar">
-      <Sidebar />
+  <div class="container">
+    <div class="main">
+      <div class="content">
+        <Banner />
+        <Topics />
+      </div>
+      <div class="sidebar">
+        <Sidebar />
+      </div>
     </div>
   </div>
 </body>
-
-

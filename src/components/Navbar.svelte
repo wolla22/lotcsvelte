@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: #333;
-    padding: 1rem;
+    padding: .7rem;
     font-family: Arial, sans-serif;
   }
 
@@ -40,10 +40,12 @@
   .menu-toggle {
     display: none;
     cursor: pointer;
+    margin-left: 96%;
   }
 
   .menu-toggle img {
-    height: 1.5rem;
+    height: 1rem;
+    float: right;
   }
 
   @media (max-width: 768px) {

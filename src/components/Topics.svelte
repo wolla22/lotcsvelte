@@ -18,8 +18,9 @@
     padding-bottom: 1%;
     padding-top: 0.1%;
     font-family: Arial, sans-serif;
-    margin-left: 2%; 
-    margin-right: 2%;
+    margin-left: .5em; 
+    width: 98%;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
   }
 
   .topics-title {
@@ -53,6 +54,29 @@
   .topic-timestamp {
     font-size: 0.9rem;
     color: #aaa;
+
+  }
+
+  @media (max-width: 768px) {
+    .topics {
+      width: 98%;
+   
+    }
+
+    .topics-title {
+      font-size: 1rem;
+    }
+    .topic-title {
+      font-size: .7rem;
+    }
+
+    .topic-author {
+      font-size: 0.5rem;
+    }
+
+    .topic-timestamp {
+      font-size: 0.5rem;
+    }
   }
 </style>
 

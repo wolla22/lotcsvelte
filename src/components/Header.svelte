@@ -23,23 +23,29 @@
 
   .header-title {
     color: #fff;
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 2.75vw, 1.75rem);
     margin: 0.5%;
   }
 
   .header-tools {
     display: flex;
     align-items: center;
+    justify-content: center; /* Add this line to center the icons */
     gap: 1rem;
   }
 
   .dropdown {
     position: relative;
+    display: flex; /* Add this line to align the dropdown-toggle with the icon */
+    align-items: center; /* Add this line to align the dropdown-toggle with the icon */
   }
 
   .dropdown-toggle {
+    display: flex; /* Add this line to center the icon inside the dropdown-toggle */
+    align-items: center; /* Add this line to center the icon inside the dropdown-toggle */
     color: #fff;
     cursor: pointer;
+    font-size: 1.5vw;
   }
 
   .dropdown-menu {
@@ -62,6 +68,7 @@
     color: #fff;
     text-decoration: none;
     padding: 0.25rem 0;
+    font-size: 1.2vw;
   }
 
   .dropdown-menu a:hover {
@@ -69,8 +76,19 @@
   }
 
   .icon {
+    font-size: clamp(18px, 2vw, 1rem);
     color: #fff;
     cursor: pointer;
+  
+  }
+  @media (max-width: 480px) {
+    .header-title {
+      font-size: 1.4rem;
+    }
+
+    .icon {
+      font-size: 1rem;
+    }
   }
 </style>
 
@@ -78,7 +96,9 @@
   <h1 class="header-title">The Lord of the Craft</h1>
   <div class="header-tools">
     <div class="dropdown">
-      <span class="dropdown-toggle" on:click={toggleCreateDropdown}>Create New Content</span>
+      <span class="dropdown-toggle icon" on:click={toggleCreateDropdown}>
+        <i class="fas fa-plus"></i> <!-- Font Awesome icon for "Create New Content" -->
+      </span>
       <div class="dropdown-menu {createDropdownOpen ? 'open' : ''}">
         <a href="/status">Status</a>
         <a href="/application">Application in Personas</a>
@@ -89,7 +109,9 @@
     <span class="icon">🔔</span> <!-- Replace with your preferred notifications icon -->
     <span class="icon">✉️</span> <!-- Replace with your preferred messages icon -->
     <div class="dropdown">
-      <span class="dropdown-toggle" on:click={toggleAccountDropdown}>Account Information</span>
+      <span class="dropdown-toggle icon" on:click={toggleAccountDropdown}>
+        <i class="fas fa-user icon"></i> <!-- Font Awesome icon for "Account Information" -->
+      </span>
       <div class="dropdown-menu {accountDropdownOpen ? 'open' : ''}">
         <a href="/profile">Profile</a>
         <a href="/settings">Settings</a>
